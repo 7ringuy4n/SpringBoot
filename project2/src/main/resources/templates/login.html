@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en"><head>
+    <title>Login Page</title>
+    <link th:href="@{/resources/loginform/css/login.css}" rel="stylesheet">
+    <link th:href="@{/resources/loginform/css/font-awesome.min.css}" rel="stylesheet">
+    <link th:href="@{/resources/vendors/bootstrap/dist/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+<body>
+<div class="wrapper">
+    <div class="title">
+        Have an Account?
+    </div>
+    <div th:if="${errors}">
+        <p th:text="${errors}"></p>
+    </div>
+
+    <form th:action="@{/login}" method="post" th:object="${user}" class="form-horizontal">
+        <div class="field">
+            <input th:field="*{userName}" class="form-control" >
+            <label class="form-control-placeholder">Username</label>
+        </div>
+    </form>
+
+    <!--    <form action="login" th:action="@{/login}" method="post" th:object="${user}" class="form-horizontal">-->
+<!--        <div class="field">-->
+<!--            <input th:text="*{user.userName}" class="form-control" required="required">-->
+
+<!--            &lt;!&ndash;            <input type="text" class="form-control" required="required">&ndash;&gt;-->
+
+<!--            <label class="form-control-placeholder">Username</label>-->
+<!--&lt;!&ndash;            <p th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}" class="text-danger"></p>&ndash;&gt;-->
+<!--        </div>-->
+
+<!--        <div class="field">-->
+<!--            <input th:field="*{userName}" class="form-control" required="required">-->
+<!--            <label class="form-control-placeholder">Username</label>-->
+<!--        </div>-->
+
+
+
+        <!--        <div class="field">-->
+<!--            <input type="password" th:field="*{password}" class="form-control" required="required">-->
+<!--            <label class="form-control-placeholder">Password</label>-->
+<!--            <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"-->
+<!--                  style="position: absolute; right: 15px; top: 16px;"></span>-->
+<!--            <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="text-danger"></p>-->
+<!--        </div>-->
+<!--        <div class="content">-->
+<!--            <div class="checkbox">-->
+<!--                <input type="checkbox" id="remember-me">-->
+<!--                <label for="remember-me">Remember me</label>-->
+<!--            </div>-->
+<!--            <div class="pass-link">-->
+<!--                <a href="#">Forgot password?</a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="field">-->
+<!--            <input type="submit" value="Login">-->
+<!--        </div>-->
+<!--        <div class="signup-link">-->
+<!--            Not a member? <a th:href="@{/user/registration}">Signup now</a>-->
+<!--        </div>-->
+<!--    </form>-->
+    <script th:src="@{/resources/loginform/js/toggle.js}"></script>
+</div>
+</body>
+</html>
