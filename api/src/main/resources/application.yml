@@ -1,0 +1,11 @@
+server:
+  port: 9090
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://192.168.174.128:33060/project1
+    username: root
+    password: 123
